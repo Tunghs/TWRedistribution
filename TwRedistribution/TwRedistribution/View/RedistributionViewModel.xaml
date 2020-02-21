@@ -37,12 +37,8 @@
 
             <ComboBox x:Name="CharacterStyleComboBox" Grid.Column="0" Grid.Row="0"
                       ItemsSource="{Binding CharacterStyleList}"
-                      SelectedItem="{Binding}">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <cmd:EventToCommand Command="{Binding SelectedCharacterCommand}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
+                      >
+                
             </ComboBox>
             <ComboBox x:Name="CharacteSkillComboBox" Grid.Column="0" Grid.Row="2"/>
             <ComboBox x:Name="RandomVariableComboBox" Grid.Column="0" Grid.Row="4"/>
