@@ -6,7 +6,7 @@
         xmlns:View="clr-namespace:TwRedistribution.View"
         xmlns:local="clr-namespace:TwRedistribution"
         mc:Ignorable="d"
-        Title="TW" Height="607" Width="552">
+        Title="TW" Height="549" Width="554">
     <Grid>
         <TabControl>
             <TabItem Header="재분배" Height="50" Width="150">
