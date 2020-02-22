@@ -10,17 +10,17 @@ namespace TwRedistribution.ViewModel
     #region Character Information
     public class CharacterInformation
     {
-        public readonly List<string> Character;
-        public readonly List<string> Style;
+        //public readonly List<string> Character;
+        //public readonly List<string> Style;
 
-        public CharacterInformation(string name)
-        {
-            if (name == null)
-                Character = GetCharacterList();
-            Style = GetCharacterStyle(name);
-        }
+        //public CharacterInformation(string name)
+        //{
+        //    if (name == null)
+        //        Character = GetCharacterList();
+        //    Style = GetCharacterStyle(name);
+        //}
 
-        private List<string> GetCharacterList()
+        public List<string> GetCharacterList()
         {
             return new List<string>(new string[]
             {
@@ -30,7 +30,7 @@ namespace TwRedistribution.ViewModel
             }); ;
         }
 
-        private List<string> GetCharacterStyle(string name)
+        public List<string> GetCharacterStyle(string name)
         {
             List<string> Style = new List<string>();
             switch (name)
@@ -90,8 +90,71 @@ namespace TwRedistribution.ViewModel
                     Style = new List<string>(new string[] { "아밍소드" });
                     break;
             }
-
             return Style;
+        }
+
+        public List<string> GetCharacterSkill(string name)
+        {
+            List<string> Skill = new List<string>();
+            switch (name)
+            {
+                case "루시안 칼츠":
+                    Skill = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                    break;
+                case "보리스 진네만":
+                    Skill = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
+                    break;
+                case "막시민 리프크네":
+                    Skill = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
+                    break;
+                case "시벨린 우":
+                    Skill = new List<string>(new string[] { "찌르기형", "물리복합형" });
+                    break;
+                case "조슈아 폰 아르님":
+                    Skill = new List<string>(new string[] { "강화계", "변화계", "방출계" });
+                    break;
+                case "란지에 로젠 크란츠":
+                    Skill = new List<string>(new string[] { "물리형", "마법형", "보조형" });
+                    break;
+                case "이자크 듀카스텔":
+                    Skill = new List<string>(new string[] { "찌르기형", "베기형", "물리복합형" });
+                    break;
+                case "밀라 네브라스카":
+                    Skill = new List<string>(new string[] { "베기형", "물리복합형" });
+                    break;
+                case "티치엘 쥬피스앙":
+                    Skill = new List<string>(new string[] { "공격형", "보조형", "전투형" });
+                    break;
+                case "이스핀 샤를":
+                    Skill = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                    break;
+                case "나야트레이":
+                    Skill = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                    break;
+                case "아나이스 델 카릴":
+                    Skill = new List<string>(new string[] { "마법인형", "파괴정령", "비호정령" });
+                    break;
+                case "클로에 다 폰티나":
+                    Skill = new List<string>(new string[] { "화염계", "빙한계", "전격계" });
+                    break;
+                case "벤야":
+                    Skill = new List<string>(new string[] { "영령계" });
+                    break;
+                case "이솔렛":
+                    Skill = new List<string>(new string[] { "티엘라", "신성차트" });
+                    break;
+                case "로아미니":
+                    Skill = new List<string>(new string[] { "주술계" });
+                    break;
+                case "녹턴 드 뷔엥":
+                    Skill = new List<string>(new string[] { "공학계" });
+                    break;
+                case "클라리체 데 아브릴":
+                    Skill = new List<string>(new string[] { "아밍소드" });
+                    break;
+            }
+
+            return Skill;
         }
     }
     #endregion
