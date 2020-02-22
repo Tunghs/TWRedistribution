@@ -251,10 +251,7 @@ namespace TwRedistribution.ViewModel
 
         public void OnSelectedStyle(EventArgs e)
         {
-            if (SelectedStyle != null)
-            {
 
-            }
         }
         #endregion
 
