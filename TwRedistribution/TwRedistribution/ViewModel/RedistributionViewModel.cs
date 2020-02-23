@@ -3,33 +3,14 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using TwRedistribution.CharacterInformation;
 using System.Windows;
 
 namespace TwRedistribution.ViewModel
 {
     #region Character Information
-    public class CharacterInformation
+    public class Character
     {
-        //public readonly List<string> Character;
-        //public readonly List<string> Style;
-
-        //public CharacterInformation(string name)
-        //{
-        //    if (name == null)
-        //        Character = GetCharacterList();
-        //    Style = GetCharacterStyle(name);
-        //}
-
-        public List<string> GetCharacterList()
-        {
-            return new List<string>(new string[]
-            {
-                "루시안 칼츠", "보리스 진네만", "막시민 리프크네", "시벨린 우", "조슈아 폰 아르님", "란지에 로젠 크란츠",
-                "이자크 듀카스텔", "밀라 네브라스카", "티치엘 쥬스피앙", "이스핀 샤를", "나야트레이", "아나이스 델 카릴",
-                "클로에 다 폰티나", "벤야", "이솔렛", "로아미니", "녹턴 드 뷔엥", "클라리체 데 아브릴"
-            }); ;
-        }
-
         public List<string> GetCharacterStyle(string name)
         {
             List<string> Style = new List<string>();
@@ -159,29 +140,6 @@ namespace TwRedistribution.ViewModel
     }
     #endregion
 
-    #region Character List
-    public class SetCharacterList
-    {
-        public readonly List<string> Character;
-        public SetCharacterList()
-        {
-            Character = Setcha();
-        }
-
-        private List<string> Setcha()
-        {
-            List<string> list = new List<string>(new string[]
-            {
-                "루시안 칼츠", "보리스 진네만", "막시민 리프크네", "시벨린 우", "조슈아 폰 아르님", "란지에 로젠 크란츠",
-                "이자크 듀카스텔", "밀라 네브라스카", "티치엘 쥬스피앙", "이스핀 샤를", "나야트레이", "아나이스 델 카릴",
-                "클로에 다 폰티나", "벤야", "이솔렛", "로아미니", "녹턴 드 뷔엥", "클라리체 데 아브릴"
-            });
-
-            return list;
-        }
-    }
-    #endregion
-
     #region Character Style
     public class SetCharacterStyle
     {
@@ -249,16 +207,6 @@ namespace TwRedistribution.ViewModel
     }
     #endregion
 
-    #region Character Skill
-    public class SetCharacterSkill
-    {
-        public readonly List<string> Skill;
-    }
-    #endregion
-
-    #region Character Skill
-    #endregion
-
     class RedistributionViewModel : ViewModelBase
     {
         #region UI Variable
@@ -320,8 +268,9 @@ namespace TwRedistribution.ViewModel
 
         public RedistributionViewModel()
         {
-            SetCharacterList setCharacterList = new SetCharacterList();
-            foreach(string character in setCharacterList.Character)
+            List<string> list = CharacterInformation.GetCharacterList();
+
+            foreach (string character in CharacterInformation.GetCharacterList())
             {
                 CharacterList.Add(character);
             }
