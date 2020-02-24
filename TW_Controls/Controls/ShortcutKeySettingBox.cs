@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace RS_Controls.Controls
+namespace TW_Controls.Controls
 {
     [TemplatePart(Name = ShortcutKeyName_TextBox, Type = typeof(TextBox))]
     [TemplatePart(Name = ShortcutKeyPathLoad_Button, Type = typeof(Button))]

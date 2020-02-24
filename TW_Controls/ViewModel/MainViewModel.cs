@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace RS_Controls.ViewModel
+namespace TW_Controls.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

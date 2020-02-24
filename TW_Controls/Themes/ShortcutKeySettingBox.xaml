@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Controls="clr-namespace:RS_Controls.Controls">
+                    xmlns:Controls="clr-namespace:TW_Controls.Controls">
 
     <Style TargetType="{x:Type Controls:ShortcutKeySettingBox}">
         <Setter Property="Template">

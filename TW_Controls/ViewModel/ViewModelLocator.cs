@@ -15,7 +15,7 @@
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace RS_Controls.ViewModel
+namespace TW_Controls.ViewModel
 {
     /// <summary>
     /// This class contains static references to all the view models in the
