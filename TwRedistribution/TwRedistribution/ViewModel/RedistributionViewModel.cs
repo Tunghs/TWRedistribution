@@ -205,6 +205,17 @@ namespace TwRedistribution.ViewModel
             get { return _selectedSkill; }
             set { _selectedSkill = value; RaisePropertyChanged("SelectedSkill"); }
         }
+        private ObservableCollection<int> _percentageList = new ObservableCollection<int>();
+        public ObservableCollection<int> PercentageList
+        {
+            get { return new ObservableCollection<int>(new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90 }); }
+        }
+        private int _selectedPercentage;
+        public int SelectedPercentage
+        {
+            get { return _selectedPercentage; }
+            set { _selectedPercentage = value; RaisePropertyChanged("SelectedPercentage"); }
+        }
         #endregion
 
         #region Command
