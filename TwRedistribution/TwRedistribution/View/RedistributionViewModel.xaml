@@ -9,6 +9,7 @@
              xmlns:local="clr-namespace:TwRedistribution.View"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="540">
+    
     <UserControl.DataContext>
         <ViewModel:RedistributionViewModel/>
     </UserControl.DataContext>
@@ -37,11 +38,13 @@
 
             <ComboBox x:Name="CharacterStyleComboBox" Grid.Column="0" Grid.Row="0"
                       ItemsSource="{Binding CharacterStyleList}"
-                      >
-                
+                      SelectedItem="{Binding SelectedStyle}">
             </ComboBox>
-            <ComboBox x:Name="CharacteSkillComboBox" Grid.Column="0" Grid.Row="2"/>
-            <ComboBox x:Name="RandomVariableComboBox" Grid.Column="0" Grid.Row="4"/>
+            <ComboBox x:Name="CharacteSkillComboBox" Grid.Column="0" Grid.Row="2"
+                      ItemsSource="{Binding CharacterSkillList}"
+                      SelectedItem="{Binding SelectedSkill}"/>
+            <ComboBox x:Name="RandomVariableComboBox" Grid.Column="0" Grid.Row="4"
+                      ItemsSource="{Binding}"/>
 
             <StackPanel x:Name="CharacterImagePanel" Grid.Column="2" Grid.Row="0" Grid.RowSpan="5">
                 <Image x:Name="CharacterImage"/>
@@ -49,7 +52,7 @@
 
             <ComboBox x:Name="CharacterNameComboBox" Grid.Column="5" Grid.Row="0"
                       ItemsSource="{Binding CharacterList}"
-                      SelectedItem="{Binding SelectedStyle}">
+                      SelectedItem="{Binding SelectedCharacter}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <cmd:EventToCommand Command="{Binding SelectedCharacterCommand}"/>

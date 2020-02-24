@@ -98,7 +98,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CharacterData\CharacterInformation.cs" />
     <Compile Include="ViewModel\RedistributionViewModel.cs" />
     <Compile Include="View\RedistributionViewModel.xaml.cs">
       <DependentUpon>RedistributionViewModel.xaml</DependentUpon>

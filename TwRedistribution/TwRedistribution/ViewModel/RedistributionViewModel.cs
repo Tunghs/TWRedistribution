@@ -3,20 +3,20 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using TwRedistribution.CharacterData;
+using System.Windows;
 
 namespace TwRedistribution.ViewModel
 {
-
+    #region Character Information
     public class CharacterInformation
     {
-        public readonly List<string> GetCharacterList;
-        public readonly List<string> GetCharacterStyle;
-        public readonly List<string> GetCharacterSkill;
+        public readonly List<string> CharacterList;
+        public readonly List<string> CharacterStyle;
+        public readonly List<string> CharacterSkill;
 
         public CharacterInformation()
         {
-            GetCharacterList = new List<string>(new string[]
+            CharacterList = new List<string>(new string[]
             {
                 "루시안 칼츠", "보리스 진네만", "막시민 리프크네", "시벨린 우", "조슈아 폰 아르님", "란지에 로젠 크란츠",
                 "이자크 듀카스텔", "밀라 네브라스카", "티치엘 쥬스피앙", "이스핀 샤를", "나야트레이", "아나이스 델 카릴",
@@ -26,74 +26,83 @@ namespace TwRedistribution.ViewModel
 
         public CharacterInformation(string name)
         {
-            GetCharacterStyle = CharacterStyle(name);
-            GetCharacterSkill = CharacterSkill(name);
+            CharacterStyle = GetCharacterStyle(name);
+            CharacterSkill = GetCharacterSkill(name);
         }
 
-        private List<string> CharacterStyle(string name)
+        private List<string> GetCharacterStyle(string name)
         {
             List<string> Style = new List<string>();
-            switch (name)
+
+            if (name != null)
             {
-                case "루시안 칼츠":
-                    Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
-                    break;
-                case "보리스 진네만":
-                    Style = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
-                    break;
-                case "막시민 리프크네":
-                    Style = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
-                    break;
-                case "시벨린 우":
-                    Style = new List<string>(new string[] { "찌르기형", "물리복합형" });
-                    break;
-                case "조슈아 폰 아르님":
-                    Style = new List<string>(new string[] { "강화계", "변화계", "방출계" });
-                    break;
-                case "란지에 로젠 크란츠":
-                    Style = new List<string>(new string[] { "물리형", "마법형", "보조형" });
-                    break;
-                case "이자크 듀카스텔":
-                    Style = new List<string>(new string[] { "찌르기형", "베기형", "물리복합형" });
-                    break;
-                case "밀라 네브라스카":
-                    Style = new List<string>(new string[] { "베기형", "물리복합형" });
-                    break;
-                case "티치엘 쥬피스앙":
-                    Style = new List<string>(new string[] { "공격형", "보조형", "전투형" });
-                    break;
-                case "이스핀 샤를":
-                    Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
-                    break;
-                case "나야트레이":
-                    Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
-                    break;
-                case "아나이스 델 카릴":
-                    Style = new List<string>(new string[] { "마법인형", "파괴정령", "비호정령" });
-                    break;
-                case "클로에 다 폰티나":
-                    Style = new List<string>(new string[] { "화염계", "빙한계", "전격계" });
-                    break;
-                case "벤야":
-                    Style = new List<string>(new string[] { "영령계" });
-                    break;
-                case "이솔렛":
-                    Style = new List<string>(new string[] { "티엘라", "신성차트" });
-                    break;
-                case "로아미니":
-                    Style = new List<string>(new string[] { "주술계" });
-                    break;
-                case "녹턴 드 뷔엥":
-                    Style = new List<string>(new string[] { "공학계" });
-                    break;
-                case "클라리체 데 아브릴":
-                    Style = new List<string>(new string[] { "아밍소드" });
-                    break;
+                switch (name)
+                {
+                    case "루시안 칼츠":
+                        Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                        break;
+                    case "보리스 진네만":
+                        Style = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
+                        break;
+                    case "막시민 리프크네":
+                        Style = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
+                        break;
+                    case "시벨린 우":
+                        Style = new List<string>(new string[] { "찌르기형", "물리복합형" });
+                        break;
+                    case "조슈아 폰 아르님":
+                        Style = new List<string>(new string[] { "강화계", "변화계", "방출계" });
+                        break;
+                    case "란지에 로젠 크란츠":
+                        Style = new List<string>(new string[] { "물리형", "마법형", "보조형" });
+                        break;
+                    case "이자크 듀카스텔":
+                        Style = new List<string>(new string[] { "찌르기형", "베기형", "물리복합형" });
+                        break;
+                    case "밀라 네브라스카":
+                        Style = new List<string>(new string[] { "베기형", "물리복합형" });
+                        break;
+                    case "티치엘 쥬피스앙":
+                        Style = new List<string>(new string[] { "공격형", "보조형", "전투형" });
+                        break;
+                    case "이스핀 샤를":
+                        Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                        break;
+                    case "나야트레이":
+                        Style = new List<string>(new string[] { "물리복합형", "베기형", "찌르기형" });
+                        break;
+                    case "아나이스 델 카릴":
+                        Style = new List<string>(new string[] { "마법인형", "파괴정령", "비호정령" });
+                        break;
+                    case "클로에 다 폰티나":
+                        Style = new List<string>(new string[] { "화염계", "빙한계", "전격계" });
+                        break;
+                    case "벤야":
+                        Style = new List<string>(new string[] { "영령계" });
+                        break;
+                    case "이솔렛":
+                        Style = new List<string>(new string[] { "티엘라", "신성차트" });
+                        break;
+                    case "로아미니":
+                        Style = new List<string>(new string[] { "주술계" });
+                        break;
+                    case "녹턴 드 뷔엥":
+                        Style = new List<string>(new string[] { "공학계" });
+                        break;
+                    case "클라리체 데 아브릴":
+                        Style = new List<string>(new string[] { "아밍소드" });
+                        break;
+                }
             }
+            else
+            {
+                Style = null;
+            }
+
             return Style;
         }
 
-        private List<string> CharacterSkill(string name)
+        private List<string> GetCharacterSkill(string name)
         {
             List<string> Skill = new List<string>();
             switch (name)
@@ -108,7 +117,7 @@ namespace TwRedistribution.ViewModel
                     Skill = new List<string>(new string[] { "물리복합형", "베기형", "마검사형" });
                     break;
                 case "시벨린 우":
-                    Style = new List<string>(new string[] { "찌르기형", "물리복합형" });
+                    Skill = new List<string>(new string[] { "찌르기형", "물리복합형" });
                     break;
                 case "조슈아 폰 아르님":
                     Skill = new List<string>(new string[] { "강화계", "변화계", "방출계" });
@@ -156,6 +165,7 @@ namespace TwRedistribution.ViewModel
             return Skill;
         }
     }
+    #endregion
 
     class RedistributionViewModel : ViewModelBase
     {
@@ -183,16 +193,26 @@ namespace TwRedistribution.ViewModel
             get { return _selectedStyle; }
             set { _selectedStyle = value; RaisePropertyChanged("SelectedStyle"); }
         }
+        private ObservableCollection<string> _characterSkillList = new ObservableCollection<string>();
+        public ObservableCollection<string> CharacterSkillList
+        {
+            get { return _characterSkillList; }
+            set { _characterSkillList = value; RaisePropertyChanged("CharacterSkillList"); }
+        }
+        private string _selectedSkill;
+        public string SelectedSkill
+        {
+            get { return _selectedSkill; }
+            set { _selectedSkill = value; RaisePropertyChanged("SelectedSkill"); }
+        }
         #endregion
 
         #region Command
         public RelayCommand<EventArgs> SelectedCharacterCommand { get; private set; }
-        public RelayCommand<EventArgs> SelectedListCommand { get; private set; }
 
         private void InitRelayCommand()
         {
             SelectedCharacterCommand = new RelayCommand<EventArgs>((e) => OnSelectedCharacter(e));
-            SelectedListCommand = new RelayCommand<EventArgs>((e) => OnSelectedStyle(e));
         }
 
         public void OnSelectedCharacter(EventArgs e)
@@ -200,26 +220,22 @@ namespace TwRedistribution.ViewModel
             if (SelectedCharacter != null)
             {
                 CharacterStyleList.Clear();
-
-                SetCharacterStyle characterStyle = new SetCharacterStyle(SelectedCharacter);
-                foreach(string style in characterStyle.Style)
-                {
+                CharacterSkillList.Clear();
+                CharacterInformation characterInformation = new CharacterInformation(SelectedCharacter);
+                foreach (string style in characterInformation.CharacterStyle)
                     CharacterStyleList.Add(style);
-                }
-                // 스킬도 추가해야함!
+                foreach (string skill in characterInformation.CharacterSkill)
+                    CharacterSkillList.Add(skill);
             }
-        }
-
-        public void OnSelectedStyle(EventArgs e)
-        {
-
         }
         #endregion
 
         public RedistributionViewModel()
         {
+            CharacterInformation characterInformation = new CharacterInformation();
+            foreach (string list in characterInformation.CharacterList)
+                CharacterList.Add(list);
 
-            
             InitRelayCommand();
         }
     }
