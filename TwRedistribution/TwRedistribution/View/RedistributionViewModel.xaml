@@ -22,11 +22,11 @@
 
         <Grid x:Name="CharacterInformation" Grid.Row="0" Margin="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="240*"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="100*"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="180*"/>
+                <ColumnDefinition Width="160*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*"/>
@@ -37,13 +37,16 @@
             </Grid.RowDefinitions>
 
             <ComboBox x:Name="CharacterStyleComboBox" Grid.Column="0" Grid.Row="0"
+                      VerticalContentAlignment="Center" FontSize="14"
                       ItemsSource="{Binding CharacterStyleList}"
                       SelectedItem="{Binding SelectedStyle}">
             </ComboBox>
             <ComboBox x:Name="CharacteSkillComboBox" Grid.Column="0" Grid.Row="2"
+                      VerticalContentAlignment="Center" FontSize="14"
                       ItemsSource="{Binding CharacterSkillList}"
                       SelectedItem="{Binding SelectedSkill}"/>
             <ComboBox x:Name="RandomVariableComboBox" Grid.Column="0" Grid.Row="4"
+                      VerticalContentAlignment="Center" FontSize="14"
                       ItemsSource="{Binding PercentageList}"
                       SelectedItem="{Binding SelectedPercentage}"/>
 
@@ -51,8 +54,10 @@
                 <Image x:Name="CharacterImage"/>
             </StackPanel>
 
-            <ComboBox x:Name="CharacterNameComboBox" Grid.Column="5" Grid.Row="0"
+            <ComboBox x:Name="CharacterNameComboBox" Grid.Column="5" Grid.Row="0" 
+                      VerticalContentAlignment="Center" FontSize="14"
                       ItemsSource="{Binding CharacterList}"
+                      
                       SelectedItem="{Binding SelectedCharacter}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
@@ -62,22 +67,22 @@
             </ComboBox>
             <Grid Grid.Column="5" Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
                     <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="70*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="65*"/>
+                    <ColumnDefinition Width="64*"/>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="64*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="LV" Grid.Column="0"/>
-                <TextBox x:Name="Level" Grid.Column="2"/>
-                <Button x:Name="LevelUpButton" Grid.Column="4"/>
+                <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24"/>
+                <TextBox x:Name="Level" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" IsReadOnly="True"/>
+                <Button x:Name="LevelUpButton" Content="LV UP" FontSize="20"  Grid.Column="4"/>
             </Grid>
             <Grid Grid.Column="5" Grid.Row="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="105*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="105*"/>
+                    <ColumnDefinition Width="109*"/>
+                    <ColumnDefinition Width="2"/>
+                    <ColumnDefinition Width="109*"/>
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="UndoButton" Grid.Column="0"/>
