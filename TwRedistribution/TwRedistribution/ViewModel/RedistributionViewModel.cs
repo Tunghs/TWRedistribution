@@ -250,7 +250,7 @@ namespace TwRedistribution.ViewModel
         private void SetCharacterList()
         {
             CharacterInformation characterInformation = new CharacterInformation();
-            foreach (string list in characterInformation.CharacterList)
+            foreach (string list in characterInformation.CharacterList)`
                 CharacterList.Add(list);
         }
     }
