@@ -75,8 +75,10 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24"/>
-                <TextBox x:Name="Level" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" IsReadOnly="True"/>
-                <Button x:Name="LevelUpButton" Content="LV UP" FontSize="20"  Grid.Column="4"/>
+                <TextBox x:Name="Level" Grid.Column="2" TextAlignment="Center" FontSize="24" IsReadOnly="True"
+                         Text="{Binding LV}"/>
+                <Button x:Name="LevelUpButton" Content="LV UP" FontSize="20"  Grid.Column="4"
+                        Command="{Binding ButtonClickCommand }" CommandParameter="LvUp"/>
             </Grid>
             <Grid Grid.Column="5" Grid.Row="4">
                 <Grid.ColumnDefinitions>

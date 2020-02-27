@@ -216,14 +216,40 @@ namespace TwRedistribution.ViewModel
             get { return _selectedPercentage; }
             set { _selectedPercentage = value; RaisePropertyChanged("SelectedPercentage"); }
         }
+        private int _lv = 1;
+        public int LV
+        {
+            get { return _lv; }
+            set { _lv = value; RaisePropertyChanged("LV"); }
+        }
         #endregion
 
         #region Command
+        public RelayCommand<object> ButtonClickCommand { get; private set; }
         public RelayCommand<EventArgs> SelectedCharacterCommand { get; private set; }
 
         private void InitRelayCommand()
         {
             SelectedCharacterCommand = new RelayCommand<EventArgs>((e) => OnSelectedCharacter(e));
+            ButtonClickCommand = new RelayCommand<object>((param) => OnButtonClick(param));
+        }
+
+        private void OnButtonClick(object param)
+        {
+            switch (param.ToString())
+            {
+                case "LvUp":
+                    LvUpClick();
+                    break;
+            }
+        }
+
+        public void LvUpClick()
+        {
+            if (LV < 300)
+                LV++;
+
+            // point 부여 추가
         }
 
         public void OnSelectedCharacter(EventArgs e)
@@ -250,7 +276,7 @@ namespace TwRedistribution.ViewModel
         private void SetCharacterList()
         {
             CharacterInformation characterInformation = new CharacterInformation();
-            foreach (string list in characterInformation.CharacterList)`
+            foreach (string list in characterInformation.CharacterList)
                 CharacterList.Add(list);
         }
     }
