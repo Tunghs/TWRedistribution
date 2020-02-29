@@ -91,5 +91,27 @@
                 <Button x:Name="RedoButton" Grid.Column="2"/>
             </Grid>
         </Grid>
+
+        <Grid x:Name="CaStat" Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="260*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+
+            
+        </Grid>
     </Grid>
 </UserControl>
