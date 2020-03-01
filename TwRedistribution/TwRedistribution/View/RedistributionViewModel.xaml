@@ -111,7 +111,8 @@
                 <RowDefinition Height="40*"/>
             </Grid.RowDefinitions>
 
-            
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
         </Grid>
     </Grid>
 </UserControl>
