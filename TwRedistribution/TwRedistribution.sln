@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwRedistribution", "TwRedistribution\TwRedistribution.csproj", "{CCDAF1F5-B741-4629-9D44-09E2161974C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TW_Controls", "TW_Controls\TW_Controls.csproj", "{4881AEA2-E323-470A-AEA2-81A03E30AFB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{CCDAF1F5-B741-4629-9D44-09E2161974C3}.Release|Any CPU.Build.0 = Debug|x64
 		{CCDAF1F5-B741-4629-9D44-09E2161974C3}.Release|x64.ActiveCfg = Debug|x64
 		{CCDAF1F5-B741-4629-9D44-09E2161974C3}.Release|x64.Build.0 = Debug|x64
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Debug|x64.Build.0 = Debug|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Release|x64.ActiveCfg = Release|Any CPU
+		{4881AEA2-E323-470A-AEA2-81A03E30AFB6}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

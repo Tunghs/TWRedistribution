@@ -360,5 +360,5 @@ $RECYCLE.BIN/
 _NCrunch*
 
 .vs/
-lib/
+Output/
 packages/
