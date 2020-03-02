@@ -9,14 +9,21 @@
              xmlns:local="clr-namespace:TwRedistribution.View"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="540">
-    
+
     <UserControl.DataContext>
         <ViewModel:RedistributionViewModel/>
     </UserControl.DataContext>
-
+    
     <UserControl.Resources>
+        <LinearGradientBrush x:Key="ButtonLGB" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0"/>
+            <GradientStop Color="#a5a5a5" Offset="0.601"/>
+        </LinearGradientBrush>
+        
         <Style x:Key="RoundButtonStyle">
-            <Setter Property="Button.FontSize" Value="20"/>
+            <Setter Property="Button.FontSize" Value="18"/>
+            <Setter Property="Button.FontWeight" Value="Bold"/>
+            <Setter Property="Button.Background" Value="{StaticResource ButtonLGB}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -25,7 +32,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid Background="#303068">
+    <Grid Background="#3b3b86">
         <Grid.RowDefinitions>
             <RowDefinition Height="140*"/>
             <RowDefinition Height="320*"/>
@@ -85,15 +92,17 @@
                     <ColumnDefinition Width="64*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24" VerticalAlignment="Center"/>
-                <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#6860a8">
+                <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="White"/>
+                <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
                     <TextBlock x:Name="Level" Grid.Column="2" TextAlignment="Center" FontSize="24" VerticalAlignment="Center"
                          Text="{Binding LV}"/>
                 </Border>
 
-                <Button x:Name="LevelUpButton" Content="LV UP" FontSize="20"  Grid.Column="4"
+                <Button x:Name="LevelUpButton" Content="LV UP" Grid.Column="4"
                         Style="{StaticResource RoundButtonStyle}"
-                        Command="{Binding ButtonClickCommand }" CommandParameter="LvUp"/>
+                        Command="{Binding ButtonClickCommand }" CommandParameter="LvUp">
+                    
+                </Button>
             </Grid>
             <Grid Grid.Column="5" Grid.Row="4">
                 <Grid.ColumnDefinitions>
@@ -112,11 +121,13 @@
         <Grid x:Name="CaStat" Grid.Row="1" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="30*"/>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="245*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*"/>
@@ -128,8 +139,10 @@
                 <RowDefinition Height="40*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
+            <Border Grid.Column="2" Grid.Row="0" BorderBrush="White" CornerRadius="5" Background="#857eba">
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>
