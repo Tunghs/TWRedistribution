@@ -14,7 +14,18 @@
         <ViewModel:RedistributionViewModel/>
     </UserControl.DataContext>
 
-    <Grid>
+    <UserControl.Resources>
+        <Style x:Key="RoundButtonStyle">
+            <Setter Property="Button.FontSize" Value="20"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="#303068">
         <Grid.RowDefinitions>
             <RowDefinition Height="140*"/>
             <RowDefinition Height="320*"/>
@@ -74,10 +85,14 @@
                     <ColumnDefinition Width="64*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24"/>
-                <TextBox x:Name="Level" Grid.Column="2" TextAlignment="Center" FontSize="24" IsReadOnly="True"
+                <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24" VerticalAlignment="Center"/>
+                <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#6860a8">
+                    <TextBlock x:Name="Level" Grid.Column="2" TextAlignment="Center" FontSize="24" VerticalAlignment="Center"
                          Text="{Binding LV}"/>
+                </Border>
+
                 <Button x:Name="LevelUpButton" Content="LV UP" FontSize="20"  Grid.Column="4"
+                        Style="{StaticResource RoundButtonStyle}"
                         Command="{Binding ButtonClickCommand }" CommandParameter="LvUp"/>
             </Grid>
             <Grid Grid.Column="5" Grid.Row="4">
@@ -87,8 +102,10 @@
                     <ColumnDefinition Width="109*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="UndoButton" Grid.Column="0"/>
-                <Button x:Name="RedoButton" Grid.Column="2"/>
+                <Button x:Name="UndoButton" Grid.Column="0" Content="unDo"
+                        Style="{StaticResource RoundButtonStyle}"/>
+                <Button x:Name="RedoButton" Grid.Column="2" Content="reDo"
+                        Style="{StaticResource RoundButtonStyle}"/>
             </Grid>
         </Grid>
 
