@@ -125,9 +125,10 @@
                 <ColumnDefinition Width="100*"/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="245*"/>
+                <ColumnDefinition Width="240*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*"/>
@@ -143,6 +144,8 @@
             <Border Grid.Column="2" Grid.Row="0" BorderBrush="White" CornerRadius="5" Background="#857eba">
                 <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
             </Border>
+            <Button Grid.Column="4" Grid.Row="0" Content="▲"/>
+            <TextBlock Grid.Column="6" Grid.Row="0" Text="3"/>
         </Grid>
     </Grid>
 </UserControl>
