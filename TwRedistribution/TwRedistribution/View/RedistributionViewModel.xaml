@@ -145,7 +145,14 @@
                 <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
             </Border>
             <Button Grid.Column="4" Grid.Row="0" Content="▲"/>
-            <TextBlock Grid.Column="6" Grid.Row="0" Text="3"/>
+            <Border Grid.Column="6" Grid.Row="0" BorderBrush="White" CornerRadius="5" Background="#857eba">
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+            </Border>
+            <CheckBox Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </Grid>
     </Grid>
 </UserControl>
