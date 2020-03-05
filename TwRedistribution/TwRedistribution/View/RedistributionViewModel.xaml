@@ -118,7 +118,7 @@
             </Grid>
         </Grid>
 
-        <Grid x:Name="CaStat" Grid.Row="1" Margin="5">
+        <Grid x:Name="CharacterStat" Grid.Row="1" Margin="5" Background="AntiqueWhite">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60*"/>
                 <ColumnDefinition Width="10"/>
@@ -139,20 +139,33 @@
                 <RowDefinition Height="40*"/>
                 <RowDefinition Height="40*"/>
             </Grid.RowDefinitions>
-
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
-            <Border Grid.Column="2" Grid.Row="0" BorderBrush="White" CornerRadius="5" Background="#857eba">
-                <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
-            </Border>
-            <Button Grid.Column="4" Grid.Row="0" Content="▲"/>
-            <Border Grid.Column="6" Grid.Row="0" BorderBrush="White" CornerRadius="5" Background="#857eba">
-                <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
-            </Border>
-            <CheckBox Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </CheckBox.LayoutTransform>
-            </CheckBox>
+            
+            <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="30*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
+                <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
+                    <TextBlock Grid.Column="1" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                </Border>
+                <Button Grid.Column="4"  Content="▲"/>
+                <Border Grid.Column="6"  BorderBrush="White" CornerRadius="5" Background="#857eba">
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                </Border>
+                <CheckBox Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>
