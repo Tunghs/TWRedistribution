@@ -117,55 +117,86 @@
                         Style="{StaticResource RoundButtonStyle}"/>
             </Grid>
         </Grid>
+        <Border Grid.Row="1" Margin="5" BorderBrush="White" CornerRadius="5" Background="White" BorderThickness="3">
+            <Grid x:Name="CharacterStat" Background="#24248f">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="230*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                    </Grid.RowDefinitions>
 
-        <Grid x:Name="CharacterStat" Grid.Row="1" Margin="5" Background="AntiqueWhite">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60*"/>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="240*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="40*"/>
-            </Grid.RowDefinitions>
-            
-            <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="100*"/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="30*"/>
-                </Grid.ColumnDefinitions>
-                
-                <TextBlock Grid.Column="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
-                <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
-                    <TextBlock Grid.Column="1" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
-                </Border>
-                <Button Grid.Column="4"  Content="▲"/>
-                <Border Grid.Column="6"  BorderBrush="White" CornerRadius="5" Background="#857eba">
-                    <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
-                </Border>
-                <CheckBox Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox.LayoutTransform>
-                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                    </CheckBox.LayoutTransform>
-                </CheckBox>
+                    <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="30*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
+                        <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
+                            <TextBlock Grid.Column="1" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                        </Border>
+                        <Button Grid.Column="4"  Content="▲"/>
+                        <Border Grid.Column="6"  BorderBrush="White" CornerRadius="5" Background="#857eba">
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                        </Border>
+                        <CheckBox Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="100*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="30*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="STAB" FontSize="24" VerticalAlignment="Center" TextAlignment="Left"/>
+                        <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
+                            <TextBlock Grid.Column="1" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                        </Border>
+                        <Button Grid.Column="4"  Content="▲"/>
+                        <Border Grid.Column="6"  BorderBrush="White" CornerRadius="5" Background="#857eba">
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="3" FontSize="20" VerticalAlignment="Center"  TextAlignment="Center"/>
+                        </Border>
+                        <CheckBox Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                    </Grid>
+                </Grid>
             </Grid>
-        </Grid>
+        </Border>
     </Grid>
 </UserControl>
