@@ -118,7 +118,7 @@
             </Grid>
         </Grid>
         <Border Grid.Row="1" Margin="5" BorderBrush="White" CornerRadius="5" Background="White" BorderThickness="3">
-            <Grid x:Name="CharacterStat" Background="#24248f">
+            <Grid x:Name="CharacterStat" Background="#303068">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="60*"/>
