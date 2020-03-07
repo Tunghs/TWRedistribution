@@ -5,16 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:View="clr-namespace:TwRedistribution.View"
         xmlns:local="clr-namespace:TwRedistribution"
-        mc:Ignorable="d"
-        Title="TW" Height="549" Width="554"
-        MinHeight="549" MinWidth="554">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid Background="#f0f0f8">
-        <TabControl>
-            <TabItem Header="재분배" Height="50" Width="150">
-                <View:RedistributionViewModel/>
-            </TabItem>
-            <TabItem Header="로그" Height="50" Width="150">
-            </TabItem>
-        </TabControl>
+        <StackPanel VerticalAlignment="Top">
+            <Grid Background="White" Height="30">
+                <Grid Margin="5">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <TextBlock Text="Talesweaver Redistribution Simulator"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}">
+                            <Image Width="10" Height="10" Source="Resources\icon.png"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
