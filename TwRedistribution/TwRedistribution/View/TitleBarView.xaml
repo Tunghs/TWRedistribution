@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
              xmlns:local="clr-namespace:TwRedistribution.View"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="1024">
+    <UserControl.DataContext>
+        <ViewModel:TitleBarViewModel/>
+    </UserControl.DataContext>
     
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
@@ -34,7 +38,8 @@
                 <TextBlock Text="Talesweaver Redistribution Simulator"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}">
+                <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}"
+                        Command="{Binding ButtonClickCommand}" CommandParameter="Exit">
                     <Image Width="10" Height="10" Source="..\Resources\icon.png"/>
                 </Button>
             </StackPanel>
