@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace TwRedistribution.ViewModel
 {
@@ -27,7 +28,7 @@ namespace TwRedistribution.ViewModel
             }
         }
 
-        public void ExitProgramClick()
+        private void ExitProgramClick()
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }

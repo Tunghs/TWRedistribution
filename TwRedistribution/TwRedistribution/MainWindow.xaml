@@ -9,7 +9,7 @@
         mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
 
     <Grid Background="#f0f0f8">
-        <StackPanel VerticalAlignment="Top" Background="White">
+        <StackPanel VerticalAlignment="Top">
             <View:TitleBarView/>
         </StackPanel>
     </Grid>
