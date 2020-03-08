@@ -24,5 +24,10 @@ namespace TwRedistribution
         {
             InitializeComponent();
         }
+
+        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

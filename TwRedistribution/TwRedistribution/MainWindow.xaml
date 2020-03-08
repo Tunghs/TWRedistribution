@@ -9,8 +9,14 @@
         mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
 
     <Grid Background="#f0f0f8">
-        <StackPanel VerticalAlignment="Top">
-            <View:TitleBarView/>
-        </StackPanel>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                <View:TitleBarView/>
+            </StackPanel>
+
+            <Grid DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#FF222222">
+
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

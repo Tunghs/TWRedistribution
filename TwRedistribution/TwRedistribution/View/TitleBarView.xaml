@@ -34,7 +34,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid Height="30" Background="White" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+    <Grid Height="30" Background="White">
         <Grid Margin="5">
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                 <TextBlock Text="Talesweaver Redistribution Simulator"/>
