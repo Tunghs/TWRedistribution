@@ -14,8 +14,8 @@
                 <View:TitleBarView/>
             </StackPanel>
 
-            <Grid DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#FF222222">
-
+            <Grid Width="250" DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#2b343b">
+                <View:ListView/>
             </Grid>
         </DockPanel>
     </Grid>

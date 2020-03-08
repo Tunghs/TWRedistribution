@@ -103,6 +103,9 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\RedistributionViewModel.cs" />
     <Compile Include="ViewModel\TitleBarViewModel.cs" />
+    <Compile Include="View\ListView.xaml.cs">
+      <DependentUpon>ListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RedistributionViewModel.xaml.cs">
       <DependentUpon>RedistributionViewModel.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RedistributionViewModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
