@@ -14,12 +14,14 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListViewItem">
-                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center" />
+                        <Border Name="border" BorderThickness="0" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="Opacity" Value="1"/>
+                                <Setter Property="Background" Value="#1f252a"/>
+                                <Setter Property="BorderBrush" Value="#1f252a"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -31,18 +33,19 @@
     <Grid>
         <ListView Foreground="LightGray" FontSize="18" SelectedIndex="0" Margin="0 100" Background="#2b343b" BorderBrush="{x:Null}">
             <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Redistribution" FontSize="20" Margin="20 0"/>
+                <StackPanel>
+                    <Grid>
+                        <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Redistribution.png"/>
+                        <TextBlock Text="Redistribution" FontSize="20" Margin="50 0"/>
+                    </Grid>
                 </StackPanel>
             </ListViewItem>
             <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Log" FontSize="20" Margin="20 0"/>
-                </StackPanel>
-            </ListViewItem>
-            <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="home" FontSize="20" Margin="20 0"/>
+                <StackPanel>
+                    <Grid>
+                        <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Log.png"/>
+                        <TextBlock Text="Log" FontSize="20" Margin="50 0"/>
+                    </Grid>
                 </StackPanel>
             </ListViewItem>
         </ListView>
