@@ -173,5 +173,17 @@
   <ItemGroup>
     <Resource Include="Resources\Log.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redistribution.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
