@@ -167,7 +167,7 @@ namespace TwRedistribution.ViewModel
     }
     #endregion
 
-    class RedistributionViewModel : ViewModelBase
+    public class RedistributionViewModel : ViewModelBase
     {
         #region UI Variable
         private ObservableCollection<string> _characterList = new ObservableCollection<string>();

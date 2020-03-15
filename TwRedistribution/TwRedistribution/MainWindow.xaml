@@ -4,18 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:View="clr-namespace:TwRedistribution.View"
-        xmlns:local="clr-namespace:TwRedistribution"
-        xmlns:TitleBarView="clr-namespace:TwRedistribution.View"
-        mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
+        mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
+        WindowState="{Binding WindowState, Mode=TwoWay}">
+
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
 
     <Grid Background="#f0f0f8">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
-                <View:TitleBarView/>
+                <View:TitleBarView DataContext="{Binding _TitleBarViewModel}"/>
             </StackPanel>
 
             <Grid Width="250" DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#2b343b">
-                <View:ListView/>
+                <View:ListView DataContext="{Binding _ListViewModel}"/>
             </Grid>
         </DockPanel>
     </Grid>

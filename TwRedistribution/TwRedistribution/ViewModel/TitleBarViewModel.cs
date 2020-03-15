@@ -8,8 +8,12 @@ using System.Windows.Input;
 
 namespace TwRedistribution.ViewModel
 {
-    class TitleBarViewModel : ViewModelBase
+    public class TitleBarViewModel : ViewModelBase
     {
+        #region UIVariable
+
+        #endregion
+
         #region Command
         public RelayCommand<object> ButtonClickCommand { get; private set; }
 
@@ -32,6 +36,11 @@ namespace TwRedistribution.ViewModel
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
+        #endregion
+
+        #region Event
+        public delegate void WindowStateHandler(Window state);
+        public event WindowStateHandler _WindowStateEvent;
         #endregion
 
         public TitleBarViewModel()

@@ -9,9 +9,9 @@
              xmlns:local="clr-namespace:TwRedistribution.View"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="1024">
-    <UserControl.DataContext>
+    <d:UserControl.DataContext>
         <ViewModel:TitleBarViewModel/>
-    </UserControl.DataContext>
+    </d:UserControl.DataContext>
     
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
@@ -41,8 +41,12 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}"
+                        Command="{Binding ButtonClickCommand}" CommandParameter="Minimize">
+                    <Image Width="10" Height="10" Source="..\Resources\Minimize.ico"/>
+                </Button>
+                <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}"
                         Command="{Binding ButtonClickCommand}" CommandParameter="Exit">
-                    <Image Width="10" Height="10" Source="..\Resources\icon.png"/>
+                    <Image Width="10" Height="10" Source="..\Resources\Close.ico"/>
                 </Button>
             </StackPanel>
         </Grid>
