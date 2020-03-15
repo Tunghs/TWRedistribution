@@ -29,6 +29,9 @@ namespace TwRedistribution.ViewModel
                 case "Exit":
                     ExitProgramClick();
                     break;
+                case "WindowMinimize":
+                    WindowMinimizeClick();
+                    break;
             }
         }
 
@@ -36,10 +39,15 @@ namespace TwRedistribution.ViewModel
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
+
+        private void WindowMinimizeClick()
+        {
+            _WindowStateEvent?.Invoke(WindowState.Minimized);
+        }
         #endregion
 
         #region Event
-        public delegate void WindowStateHandler(Window state);
+        public delegate void WindowStateHandler(WindowState state);
         public event WindowStateHandler _WindowStateEvent;
         #endregion
 

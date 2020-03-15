@@ -6,7 +6,7 @@
         xmlns:View="clr-namespace:TwRedistribution.View"
         xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
         mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
-        WindowState="{Binding WindowState, Mode=TwoWay}">
+        WindowState="{Binding MainWindowState, Mode=TwoWay}">
 
     <Window.DataContext>
         <ViewModel:MainViewModel/>

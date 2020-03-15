@@ -41,7 +41,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}"
-                        Command="{Binding ButtonClickCommand}" CommandParameter="Minimize">
+                        Command="{Binding ButtonClickCommand}" CommandParameter="WindowMinimize">
                     <Image Width="10" Height="10" Source="..\Resources\Minimize.ico"/>
                 </Button>
                 <Button Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="White" Style="{StaticResource MyButton}"

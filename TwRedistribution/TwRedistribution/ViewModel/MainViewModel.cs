@@ -11,11 +11,11 @@ namespace TwRedistribution.ViewModel
         public RedistributionViewModel _RedistributionViewModel { get; set; }
         public ListViewModel _ListViewModel { get; set; }
 
-        private Window _windowState;
-        public Window WindowState
+        private WindowState _mainWindowState;
+        public WindowState MainWindowState
         {
-            get { return _windowState; }
-            set { _windowState = value; RaisePropertyChanged("WindowState"); }
+            get { return _mainWindowState; }
+            set { _mainWindowState = value; RaisePropertyChanged("MainWindowState"); }
         }
 
         public MainViewModel()
@@ -24,7 +24,12 @@ namespace TwRedistribution.ViewModel
             _RedistributionViewModel = new RedistributionViewModel();
             _ListViewModel = new ListViewModel();
 
+            _TitleBarViewModel._WindowStateEvent += new TitleBarViewModel.WindowStateHandler(this.ReceiveWindowState);
+        }
 
+        public void ReceiveWindowState(WindowState state)
+        {
+            MainWindowState = state;
         }
     }
 }
