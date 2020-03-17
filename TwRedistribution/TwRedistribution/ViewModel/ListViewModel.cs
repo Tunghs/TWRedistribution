@@ -30,12 +30,19 @@ namespace TwRedistribution.ViewModel
             {
                 case 0:
                     MessageBox.Show("0번");
+                    if (_SelectedListViewItemEvent != null)
+                        _SelectedListViewItemEvent();
                     break;
                 case 1:
                     MessageBox.Show("1번");
                     break;
             }
         }
+        #endregion
+
+        #region Event
+        public delegate void SelectedListViewItemHandler();
+        public event SelectedListViewItemHandler _SelectedListViewItemEvent;
         #endregion
 
         public ListViewModel()

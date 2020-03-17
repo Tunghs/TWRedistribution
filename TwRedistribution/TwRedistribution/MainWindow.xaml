@@ -12,6 +12,10 @@
         <ViewModel:MainViewModel/>
     </Window.DataContext>
 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="VisibilityConverter"/>
+    </Window.Resources>
+
     <Grid Background="#f0f0f8">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
@@ -20,6 +24,11 @@
 
             <Grid Width="250" DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#2b343b">
                 <View:ListView DataContext="{Binding _ListViewModel}"/>
+            </Grid>
+
+            <Grid x:Name="GridPrincipal" DockPanel.Dock="Right" 
+                  Visibility="{Binding dd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
+                <View:RedistributionViewModel DataContext="{Binding _RedistributionViewModel}"/>
             </Grid>
         </DockPanel>
     </Grid>
