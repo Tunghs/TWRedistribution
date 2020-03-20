@@ -8,18 +8,19 @@ namespace TwRedistribution.ViewModel
     public class MainViewModel : ViewModelBase
     {
         #region UIVariable
-        private bool _showGridView = true;
-        public bool ShowGridView
+        private bool _redistributionViewVisibility = true;
+        public bool RedistributionViewVisibility
         {
-            get { return _showGridView; }
-            set { _showGridView = value; RaisePropertyChanged("ShowGridView"); }
+            get { return _redistributionViewVisibility; }
+            set { _redistributionViewVisibility = value; RaisePropertyChanged("RedistributionViewVisibility"); }
         }
-        private bool _hideGridView = false;
-        public bool HideGridView
+        private bool _logViewVisibility = false;
+        public bool LogViewVisibility
         {
-            get { return _hideGridView; }
-            set { _hideGridView = value; RaisePropertyChanged("HideGridView"); }
+            get { return _logViewVisibility; }
+            set { _logViewVisibility = value; RaisePropertyChanged("HideGridView"); }
         }
+
         private WindowState _mainWindowState;
         public WindowState MainWindowState
         {
@@ -31,17 +32,17 @@ namespace TwRedistribution.ViewModel
         public TitleBarViewModel _TitleBarViewModel { get; set; }
         public RedistributionViewModel _RedistributionViewModel { get; set; }
         public ListViewModel _ListViewModel { get; set; }
-
-        
+        public LogViewModel _LogViewModel { get; set; }
 
         public MainViewModel()
         {
             _TitleBarViewModel = new TitleBarViewModel();
             _RedistributionViewModel = new RedistributionViewModel();
             _ListViewModel = new ListViewModel();
+            _LogViewModel = new LogViewModel();
 
             _TitleBarViewModel._WindowStateEvent += new TitleBarViewModel.WindowStateHandler(this.ReceiveWindowState);
-            _ListViewModel._SelectedListViewItemEvent += new ListViewModel.SelectedListViewItemHandler(this.ReceiveSelectedListViewItemGrid);
+            _ListViewModel._ShowSelectedListViewItemGridEvent += new ListViewModel.SelectedListViewItemHandler(this.ShowSelectedListViewItem);
         }
 
         public void ReceiveWindowState(WindowState state)
@@ -49,17 +50,18 @@ namespace TwRedistribution.ViewModel
             MainWindowState = state;
         }
 
-        public void ReceiveSelectedListViewItemGrid()
+        public void ShowSelectedListViewItem(int listViewIndex)
         {
-            if (ShowGridView)
+            switch (listViewIndex)
             {
-                ShowGridView = false;
-                HideGridView = true;
-            }
-            else
-            {
-                ShowGridView = true;
-                HideGridView = false;
+                case 0:
+                    RedistributionViewVisibility = true;
+                    LogViewVisibility = false;
+                    break;
+                case 1:
+                    RedistributionViewVisibility = false;
+                    LogViewVisibility = true;
+                    break;
             }
         }
     }

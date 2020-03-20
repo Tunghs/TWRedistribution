@@ -26,23 +26,14 @@ namespace TwRedistribution.ViewModel
 
         private void OnSelectedListViewItemIndex(EventArgs e)
         {
-            switch (ListViewIndex)
-            {
-                case 0:
-                    MessageBox.Show("0번");
-                    if (_SelectedListViewItemEvent != null)
-                        _SelectedListViewItemEvent();
-                    break;
-                case 1:
-                    MessageBox.Show("1번");
-                    break;
-            }
+            if (_ShowSelectedListViewItemGridEvent != null)
+                _ShowSelectedListViewItemGridEvent(ListViewIndex);
         }
         #endregion
 
         #region Event
-        public delegate void SelectedListViewItemHandler();
-        public event SelectedListViewItemHandler _SelectedListViewItemEvent;
+        public delegate void SelectedListViewItemHandler(int listViewIndex);
+        public event SelectedListViewItemHandler _ShowSelectedListViewItemGridEvent;
         #endregion
 
         public ListViewModel()

@@ -26,9 +26,13 @@
                 <View:ListView DataContext="{Binding _ListViewModel}"/>
             </Grid>
 
-            <Grid x:Name="GridPrincipal" DockPanel.Dock="Right" 
-                  Visibility="{Binding HideGridView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
-                <View:RedistributionViewModel DataContext="{Binding _RedistributionViewModel}"/>
+            <Grid DockPanel.Dock="Right">
+                <Grid Visibility="{Binding RedistributionViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
+                    <View:RedistributionViewModel DataContext="{Binding _RedistributionViewModel}"/>
+                </Grid>
+                <Grid Visibility="{Binding LogViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
+                    <View:LogView DataContext="{Binding _RedistributionViewModel}"/>
+                </Grid>
             </Grid>
         </DockPanel>
     </Grid>
