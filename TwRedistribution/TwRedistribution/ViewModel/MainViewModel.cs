@@ -59,7 +59,7 @@ namespace TwRedistribution.ViewModel
                     LogViewVisibility = false;
                     break;
                 case 1:
-                    RedistributionViewVisibility = false;
+                    RedistributionViewVisibility = true;
                     LogViewVisibility = true;
                     break;
             }
