@@ -14,15 +14,9 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <LinearGradientBrush x:Key="ButtonLGB" EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="White" Offset="0"/>
-            <GradientStop Color="#a5a5a5" Offset="0.601"/>
-        </LinearGradientBrush>
-
         <Style x:Key="RoundButtonStyle">
             <Setter Property="Button.FontSize" Value="18"/>
             <Setter Property="Button.FontWeight" Value="Bold"/>
-            <Setter Property="Button.Background" Value="{StaticResource ButtonLGB}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -60,7 +54,7 @@
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <ComboBox Width="300" FontSize="20"
-                                      VerticalContentAlignment="Center"
+                                      Style="{StaticResource ComboBoxStyle}"
                                       ItemsSource="{Binding CharacterStyleList}"
                                       SelectedItem="{Binding SelectedStyle}"/>
                         </StackPanel>
