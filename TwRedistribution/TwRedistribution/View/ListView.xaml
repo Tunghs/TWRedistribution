@@ -25,9 +25,9 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Opacity" Value="1"/>
-                                <Setter Property="Background" Value="#38444d"/>
-                                <Setter Property="BorderBrush" Value="#38444d"/>
+                                <Setter Property="Opacity" Value="0.8"/>
+                                <Setter Property="Background" Value="#6073ac"/>
+                                <Setter Property="BorderBrush" Value="#6073ac"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -37,29 +37,35 @@
     </UserControl.Resources>
     
     <Grid>
-        <ListView Foreground="LightGray" FontSize="18" Margin="0 100" Background="#2b343b" BorderBrush="{x:Null}"
+        <StackPanel Margin="10" Orientation="Vertical">
+            <Image Height="60" Source="..\Resources\Logo.png" Margin="0 20 0 0"/>
+
+            <ListView Foreground="#9ca9cb" FontSize="20" Margin="0 30 0 0" Background="{x:Null}" BorderBrush="{x:Null}"
                   SelectedIndex="{Binding ListViewIndex}">
-            <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
-                <StackPanel>
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Redistribution.ico"/>
-                        <TextBlock Text="Redistribution" FontSize="20" Margin="50 0"/>
-                    </Grid>
-                </StackPanel>
-            </ListViewItem>
-            <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
-                <StackPanel>
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Log.ico"/>
-                        <TextBlock Text="Log" FontSize="20" Margin="50 0"/>
-                    </Grid>
-                </StackPanel>
-            </ListViewItem>
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectionChanged">
-                    <cmd:EventToCommand Command="{Binding SelectedListViewItemCommand}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </ListView>
+                <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
+                    <StackPanel>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Redistribution.ico"/>
+                            <TextBlock Text="재분배" Margin="50 0"/>
+                        </Grid>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" Style="{StaticResource MyListViewItem}">
+                    <StackPanel>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Margin="10 0" Width="20" Height="20" Source="..\Resources\Log.ico"/>
+                            <TextBlock Text="로그" Margin="50 0"/>
+                        </Grid>
+                    </StackPanel>
+                </ListViewItem>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <cmd:EventToCommand Command="{Binding SelectedListViewItemCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </StackPanel>
+        
+        
     </Grid>
 </UserControl>

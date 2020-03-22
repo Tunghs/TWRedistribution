@@ -6,7 +6,7 @@
         xmlns:View="clr-namespace:TwRedistribution.View"
         xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
         mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
-        WindowState="{Binding MainWindowState, Mode=TwoWay}">
+        AllowsTransparency="True" WindowState="{Binding MainWindowState, Mode=TwoWay}" Background="{x:Null}">
 
     <Window.DataContext>
         <ViewModel:MainViewModel/>
@@ -16,24 +16,30 @@
         <BooleanToVisibilityConverter x:Key="VisibilityConverter"/>
     </Window.Resources>
 
-    <Grid Background="#f0f0f8">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
-                <View:TitleBarView DataContext="{Binding _TitleBarViewModel}"/>
-            </StackPanel>
+    <Border CornerRadius="10" Background="#f6f9fa" BorderBrush="Gray" BorderThickness="0.3">
+        <Grid>
+            <Grid Margin="3">
+                <Grid>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                            <View:TitleBarView DataContext="{Binding _TitleBarViewModel}"/>
+                        </StackPanel>
 
-            <Grid Width="250" DockPanel.Dock="Left" HorizontalAlignment="Left" Background="#2b343b">
-                <View:ListView DataContext="{Binding _ListViewModel}"/>
-            </Grid>
-
-            <Grid DockPanel.Dock="Right">
-                <Grid Visibility="{Binding RedistributionViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
-                    <View:RedistributionView DataContext="{Binding _RedistributionViewModel}"/>
+                        <Grid Width="230" DockPanel.Dock="Left" HorizontalAlignment="Left" Background="White" Margin="0 0 10 0">
+                            <View:ListView DataContext="{Binding _ListViewModel}"/>
+                        </Grid>
+                       
+                        <Grid DockPanel.Dock="Right">
+                            <Grid Visibility="{Binding RedistributionViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
+                                <View:RedistributionView DataContext="{Binding _RedistributionViewModel}"/>
+                            </Grid>
+                            <Grid Visibility="{Binding LogViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
+                                <View:LogView DataContext="{Binding _LogViewModel}"/>
+                            </Grid>
+                        </Grid>
+                    </DockPanel>
                 </Grid>
-                <Grid Visibility="{Binding LogViewVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource VisibilityConverter}}">
-                    <View:LogView DataContext="{Binding _RedistributionViewModel}"/>
-                </Grid>
             </Grid>
-        </DockPanel>
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

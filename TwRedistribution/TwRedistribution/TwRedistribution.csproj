@@ -194,5 +194,11 @@
   <ItemGroup>
     <Resource Include="Resources\Redistribution.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Nocturne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

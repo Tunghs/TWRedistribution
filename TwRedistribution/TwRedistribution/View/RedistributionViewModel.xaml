@@ -38,6 +38,7 @@
             <RowDefinition Height="320*"/>
         </Grid.RowDefinitions>
 
+
         <Grid x:Name="CharacterInformation" Grid.Row="0" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="240*"/>

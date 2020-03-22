@@ -7,18 +7,18 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
              mc:Ignorable="d" 
-             d:DesignHeight="460" d:DesignWidth="540">
+             d:DesignHeight="570" d:DesignWidth="774">
 
     <UserControl.DataContext>
         <ViewModel:RedistributionViewModel/>
     </UserControl.DataContext>
-    
+
     <UserControl.Resources>
         <LinearGradientBrush x:Key="ButtonLGB" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>
             <GradientStop Color="#a5a5a5" Offset="0.601"/>
         </LinearGradientBrush>
-        
+
         <Style x:Key="RoundButtonStyle">
             <Setter Property="Button.FontSize" Value="18"/>
             <Setter Property="Button.FontWeight" Value="Bold"/>
@@ -32,6 +32,65 @@
     </UserControl.Resources>
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="White" BorderBrush="White" BorderThickness="0.3" Margin="5">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="5">
+                    <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="#f1f4fc" BorderThickness="0.3">
+                        <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="White" BorderThickness="2.5" Margin="2">
+                            <Image Source="..\Resources\Nocturne.png"/>
+                        </Border>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="5">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ComboBox Width="300" FontSize="20"
+                                      VerticalContentAlignment="Center"
+                                      ItemsSource="{Binding CharacterStyleList}"
+                                      SelectedItem="{Binding SelectedStyle}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <!--그림자-->
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="#e9e9e9" Direction="270" ShadowDepth="10" Softness=".8"/>
+            </Border.BitmapEffect>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="1" CornerRadius="10" Background="White" BorderBrush="White" BorderThickness="0.3" Margin="5">
+            <Grid Grid.Row="0" Grid.Column="0" Margin="5">
+
+            </Grid>
+            <!--그림자-->
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="#e9e9e9" Direction="270" ShadowDepth="10" Softness=".8"/>
+            </Border.BitmapEffect>
+        </Border>
+
     </Grid>
 </UserControl>
