@@ -186,19 +186,19 @@
     <Resource Include="Resources\Close.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Log.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Minimize.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Redistribution.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Nocturne.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TwRedistribution.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Log.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

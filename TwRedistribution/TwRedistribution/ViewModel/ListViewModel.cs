@@ -14,6 +14,19 @@ namespace TwRedistribution.ViewModel
             get { return _listViewIndex; }
             set { _listViewIndex = value; RaisePropertyChanged("ListViewIndex"); }
         }
+
+        private bool _redistributionBarVisibility = true;
+        public bool RedistributionBarVisibility
+        {
+            get { return _redistributionBarVisibility; }
+            set { _redistributionBarVisibility = value; RaisePropertyChanged("RedistributionBarVisibility"); }
+        }
+        private bool _logBarVisibility = false;
+        public bool LogBarVisibility
+        {
+            get { return _logBarVisibility; }
+            set { _logBarVisibility = value; RaisePropertyChanged("LogBarVisibility"); }
+        }
         #endregion
 
         #region Command
@@ -26,6 +39,18 @@ namespace TwRedistribution.ViewModel
 
         private void OnSelectedListViewItemIndex(EventArgs e)
         {
+            switch (ListViewIndex)
+            {
+                case 0:
+                    RedistributionBarVisibility = true;
+                    LogBarVisibility = false;
+                    break;
+                case 1:
+                    RedistributionBarVisibility = false;
+                    LogBarVisibility = true;
+                    break;
+            }
+
             if (_ShowSelectedListViewItemGridEvent != null)
                 _ShowSelectedListViewItemGridEvent(ListViewIndex);
         }
