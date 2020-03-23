@@ -7,7 +7,8 @@
         xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
-        AllowsTransparency="True" WindowState="{Binding MainWindowState, Mode=TwoWay}" Background="{x:Null}">
+        ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False"
+        AllowsTransparency="True" WindowState="{Binding MainWindowState, Mode=TwoWay}" Background="{x:Null}" BorderBrush="{x:Null}">
 
     <Window.DataContext>
         <ViewModel:MainViewModel/>
