@@ -29,12 +29,31 @@ namespace TwRedistribution.ViewModel
         }
         #endregion
 
+        public InformationViewModel _InformationViewModel { get; set; }
+
         #region Command
+        public RelayCommand<object> ButtonClickCommand { get; private set; }
         public RelayCommand<EventArgs> SelectedListViewItemCommand { get; private set; }
 
         private void InitRelayCommand()
         {
             SelectedListViewItemCommand = new RelayCommand<EventArgs>(OnSelectedListViewItemIndex);
+            ButtonClickCommand = new RelayCommand<object>(OnButtonClick);
+        }
+
+        private void OnButtonClick(object param)
+        {
+            switch (param.ToString())
+            {
+                case "Info":
+                    OnShowInfoView();
+                    break;
+            }
+        }
+
+        private void OnShowInfoView()
+        {
+            _InformationViewModel = new InformationViewModel();
         }
 
         private void OnSelectedListViewItemIndex(EventArgs e)
