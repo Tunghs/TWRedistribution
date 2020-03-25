@@ -3,6 +3,8 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows;
 
+using MahApps.Metro.Controls.Dialogs;
+
 namespace TwRedistribution.ViewModel
 {
     public class ListViewModel : ViewModelBase
@@ -27,6 +29,8 @@ namespace TwRedistribution.ViewModel
             get { return _logBarVisibility; }
             set { _logBarVisibility = value; RaisePropertyChanged("LogBarVisibility"); }
         }
+
+        private IDialogCoordinator dialogCoordinator;
         #endregion
 
         public InformationViewModel _InformationViewModel { get; set; }
@@ -80,9 +84,23 @@ namespace TwRedistribution.ViewModel
         public event SelectedListViewItemHandler _ShowSelectedListViewItemGridEvent;
         #endregion
 
-        public ListViewModel()
+        public ListViewModel(IDialogCoordinator instance)
         {
             InitRelayCommand();
+            dialogCoordinator = instance;
+        }
+
+        private void FooMessage()
+        {
+            await dialogCoordinator.ShowMessageAsync(this, "HEADER", "MESSAGE");
+        }
+
+        private void FooProgress()
+        {
+            ProgressDialogController controller = await dialogCoordinator.ShowProgressAsync(this, "HEADER", "MESSAGE");
+            controller.SetIndeterminate();
+
+            await controller.CloseAsync();
         }
     }
 }
