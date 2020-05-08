@@ -250,6 +250,7 @@ namespace TwRedistribution.ViewModel
                 LV++;
 
             // point 부여 추가
+            // LevelUp 하면 포인트 오르게 변경
         }
 
         public void OnSelectedCharacter(EventArgs e)
