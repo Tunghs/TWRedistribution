@@ -85,5 +85,45 @@
             </Border.BitmapEffect>
         </Border>
 
+
+        <Border Grid.Row="0" Grid.Column="0" CornerRadius="10" Background="White" BorderBrush="White" BorderThickness="0.3" Margin="5">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="5">
+                    <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="#f1f4fc" BorderThickness="0.3">
+                        <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="White" BorderThickness="2.5" Margin="2">
+                            <Image Source="..\Resources\Nocturne.png"/>
+                        </Border>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="5">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ComboBox Width="300" FontSize="20"
+                                      ItemsSource="{Binding CharacterStyleList}"
+                                      SelectedItem="{Binding SelectedStyle}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
+                            <ComboBox FontSize="20" Width="300"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <!--그림자-->
+            <Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="#e9e9e9" Direction="270" ShadowDepth="10" Softness=".8"/>
+            </Border.BitmapEffect>
+        </Border>
     </Grid>
 </UserControl>
