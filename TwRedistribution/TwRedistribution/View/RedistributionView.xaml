@@ -9,9 +9,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="570" d:DesignWidth="774">
 
-    <UserControl.DataContext>
+    <d:UserControl.DataContext>
         <ViewModel:RedistributionViewModel/>
-    </UserControl.DataContext>
+    </d:UserControl.DataContext>
 
     <UserControl.Resources>
         <Style x:Key="RoundButtonStyle">
@@ -87,38 +87,45 @@
 
 
         <Border Grid.Row="1" Grid.Column="0" CornerRadius="10" Background="White" BorderBrush="White" BorderThickness="0.3" Margin="5">
-            <Grid Margin="5">
+            <Grid Margin="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
 
-                <Grid Grid.Column="0" Margin="5">
-                    <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="#f1f4fc" BorderThickness="0.3">
-                        <Border CornerRadius="10" Background="#f1f4fc" BorderBrush="White" BorderThickness="2.5" Margin="2">
-                            <Image Source="..\Resources\Nocturne.png"/>
-                        </Border>
-                    </Border>
-                </Grid>
-
-                <Grid Grid.Column="1" Margin="5">
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <ComboBox Width="300" FontSize="20"
-                                      ItemsSource="{Binding CharacterStyleList}"
-                                      SelectedItem="{Binding SelectedStyle}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
-                            <ComboBox FontSize="20" Width="300"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
-                            <ComboBox FontSize="20" Width="300"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 21 0 0">
-                            <ComboBox FontSize="20" Width="300"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="LV"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding Level, Mode=TwoWay}"/>
+                <Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Content="Auto Level Up"/>
+                <Button Grid.Row="0" Grid.Column="8" Content="▲"/>
+                <Button Grid.Row="0" Grid.Column="10" Content="▼"/>
+                <Button Grid.Row="0" Grid.Column="12" Content="Level Up"
+                        Command="{Binding ButtonClickCommand}" CommandParameter="LevelUp"/>
             </Grid>
             <!--그림자-->
             <Border.BitmapEffect>

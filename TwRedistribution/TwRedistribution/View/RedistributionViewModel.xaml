@@ -3,17 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ViewModel="clr-namespace:TwRedistribution.ViewModel"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
              xmlns:local="clr-namespace:TwRedistribution.View"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="540">
 
-    <UserControl.DataContext>
-        <ViewModel:RedistributionViewModel/>
-    </UserControl.DataContext>
-    
     <UserControl.Resources>
         <LinearGradientBrush x:Key="ButtonLGB" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>
@@ -96,12 +91,12 @@
                 <TextBlock Text="LV" Grid.Column="0" TextAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="White"/>
                 <Border Grid.Column="2" BorderBrush="White" CornerRadius="5" Background="#857eba">
                     <TextBlock x:Name="Level" Grid.Column="2" TextAlignment="Center" FontSize="24" VerticalAlignment="Center"
-                         Text="{Binding LV}"/>
+                         />
                 </Border>
 
                 <Button x:Name="LevelUpButton" Content="LV UP" Grid.Column="4"
                         Style="{StaticResource RoundButtonStyle}"
-                        Command="{Binding ButtonClickCommand }" CommandParameter="LvUp">
+                        >
                     
                 </Button>
             </Grid>

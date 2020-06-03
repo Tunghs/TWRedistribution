@@ -216,11 +216,11 @@ namespace TwRedistribution.ViewModel
             get { return _selectedPercentage; }
             set { _selectedPercentage = value; RaisePropertyChanged("SelectedPercentage"); }
         }
-        private int _lv = 1;
-        public int LV
+        private int _level = 1;
+        public int Level
         {
-            get { return _lv; }
-            set { _lv = value; RaisePropertyChanged("LV"); }
+            get { return _level; }
+            set { _level = value; RaisePropertyChanged("LV"); }
         }
         #endregion
 
@@ -230,15 +230,15 @@ namespace TwRedistribution.ViewModel
 
         private void InitRelayCommand()
         {
-            SelectedCharacterCommand = new RelayCommand<EventArgs>((e) => OnSelectedCharacter(e));
-            ButtonClickCommand = new RelayCommand<object>((param) => OnButtonClick(param));
+            SelectedCharacterCommand = new RelayCommand<EventArgs>(OnSelectedCharacter);
+            ButtonClickCommand = new RelayCommand<object>(OnButtonClick);
         }
 
         private void OnButtonClick(object param)
         {
             switch (param.ToString())
             {
-                case "LvUp":
+                case "LevelUp":
                     LvUpClick();
                     break;
             }
@@ -246,8 +246,11 @@ namespace TwRedistribution.ViewModel
 
         public void LvUpClick()
         {
-            if (LV < 300)
-                LV++;
+            if (Level < 300)
+            {
+                Level++;
+            }
+                
 
             // point 부여 추가
             // LevelUp 하면 포인트 오르게 변경
