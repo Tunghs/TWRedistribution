@@ -220,7 +220,7 @@ namespace TwRedistribution.ViewModel
         public int Level
         {
             get { return _level; }
-            set { _level = value; RaisePropertyChanged("LV"); }
+            set { _level = value; RaisePropertyChanged("Level"); }
         }
         #endregion
 

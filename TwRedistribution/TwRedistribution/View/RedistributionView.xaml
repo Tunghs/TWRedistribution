@@ -126,6 +126,34 @@
                 <Button Grid.Row="0" Grid.Column="10" Content="▼"/>
                 <Button Grid.Row="0" Grid.Column="12" Content="Level Up"
                         Command="{Binding ButtonClickCommand}" CommandParameter="LevelUp"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="STAB"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="1"/>
+                <TextBlock Grid.Row="2" Grid.Column="4" Text="1"/>
+                <TextBlock Grid.Row="2" Grid.Column="6" Text="1"/>
+                <Button Grid.Row="2" Grid.Column="8" Content="▲"/>
+                <CheckBox Grid.Row="2" Grid.Column="10"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="STAB"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="1"/>
+                <TextBlock Grid.Row="4" Grid.Column="4" Text="1"/>
+                <TextBlock Grid.Row="4" Grid.Column="6" Text="1"/>
+                <Button Grid.Row="4" Grid.Column="8" Content="▲"/>
+                <CheckBox Grid.Row="4" Grid.Column="10"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="STAB"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="1"/>
+                <TextBlock Grid.Row="6" Grid.Column="4" Text="1"/>
+                <TextBlock Grid.Row="6" Grid.Column="6" Text="1"/>
+                <Button Grid.Row="6" Grid.Column="8" Content="▲"/>
+                <CheckBox Grid.Row="6" Grid.Column="10"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="STAB"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Text="1"/>
+                <TextBlock Grid.Row="8" Grid.Column="4" Text="1"/>
+                <TextBlock Grid.Row="8" Grid.Column="6" Text="1"/>
+                <Button Grid.Row="8" Grid.Column="8" Content="▲"/>
+                <CheckBox Grid.Row="8" Grid.Column="10"/>
             </Grid>
             <!--그림자-->
             <Border.BitmapEffect>
