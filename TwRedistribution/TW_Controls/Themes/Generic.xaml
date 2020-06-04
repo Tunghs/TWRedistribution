@@ -4,7 +4,7 @@
     xmlns:local="clr-namespace:TW_Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="StatControl.xaml" />
+        <ResourceDictionary Source="StatusController.xaml" />
         <!--아래로 주르륵 추가-->
     </ResourceDictionary.MergedDictionaries>
     

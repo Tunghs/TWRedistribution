@@ -72,7 +72,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Themes\StatControl.xaml">
+    <Page Include="Themes\StatusController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -82,7 +82,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\StatControl.cs" />
+    <Compile Include="Controls\StatusController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

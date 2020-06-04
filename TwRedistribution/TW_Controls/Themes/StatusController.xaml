@@ -3,10 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Controls="clr-namespace:TW_Controls.Controls">
 
-    <Style TargetType="{x:Type Controls:StatControl}">
+    <Style TargetType="{x:Type Controls:StatusController}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Controls:StatControl}">
+                <ControlTemplate TargetType="{x:Type Controls:StatusController}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="60*"/>

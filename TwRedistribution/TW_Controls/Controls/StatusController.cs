@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace TW_Controls.Controls
 {
-    class StatControl : Control
+    class StatusController
     {
     }
 }
