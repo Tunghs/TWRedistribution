@@ -10,16 +10,25 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="60*"/>
-                            <ColumnDefinition Width="100*"/>
-                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="260*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Grid Grid.Column="0">
-                            <TextBlock Text="STAB" FontSize="24" />
-                        </Grid>
+                        <TextBlock Grid.Column="0" Text="{TemplateBinding ControlName}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" Text="{TemplateBinding StatusValue}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="4" Text="1"/>
+                        <TextBlock Grid.Column="6" Text="1"/>
+                        <Button Grid.Column="8" Content="▲"/>
+                        <CheckBox Grid.Column="10"/>
+                        
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TW_Controls.Controls
 {
-    class StatusController
+    public class StatusController
     {
     }
 }
